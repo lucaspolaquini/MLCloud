@@ -1,0 +1,89 @@
+flowchart TD
+    nuvem["Nuvem"] --> servidores["Conjunto de servidores"] --> sobDemanda["Recursos Sob-demanda"]
+    sobDemanda --> armazenamento["Armazenagem"]
+    sobDemanda --> processamento["Processamento"]
+    armazenamento --> elastica["Elástica"]
+    processamento --> elastica
+    processamento --> hardware["Hardwares Especializados"]
+    hardware --> gpus["GPUs"]
+    hardware --> tpus["TPUs"]
+    elastica --> uso["Uso em<br/>Aprendizado de máquina"]
+    gpus --> uso
+    tpus --> uso
+
+    uso --> coletar["Coletar Dados"]
+    coletar --> banco["Banco de Dados"]
+    coletar --> websites["Websites"]
+    coletar --> arquivos["Arquivos Locais"]
+    banco --> armazDados["Armazenamento"]
+    websites --> armazDados
+    arquivos --> armazDados
+    armazDados --> falhas["Resistente a Falhas"] --> backup["Backup"]
+    armazDados --> espaco["Espaço Suficiente"]
+    armazDados --> centralizado["Centralizado"]
+
+    coletar --> pre["Pré-processamento"]
+    pre --> limpeza["Limpeza dos Dados"]
+    pre --> conversao["Conversão de Formato"]
+    limpeza --> custoProc["Processamento Custoso"]
+    conversao --> custoProc
+    custoProc --> recursosEscalaveis["Recursos Escaláveis"]
+    custoProc --> etl["ETL"]
+
+    pre --> modelo["Modelo"]
+    modelo --> tipo["Definição Tipo"]
+    tipo --> arvore["Árvores de Decisão"]
+    tipo --> knn["KNN"]
+    tipo --> redes["Redes Neurais"]
+    arvore --> treinamento["Treinamento"]
+    knn --> treinamento
+    redes --> treinamento
+    modelo --> hiper["Hiperparametros"] --> ajustes["Ajustes"]
+    treinamento --> tarefas["Tarefas Custosas"]
+    ajustes --> tarefas
+    tarefas --> paralelo["Processamento Paralelo"]
+    tarefas --> hardware2["Hardwares Especializados"]
+    tarefas --> alta["Alta disponibilidade"]
+    hardware2 --> gpus2["GPUs"]
+    hardware2 --> tpus2["TPUs"]
+
+    modelo --> avaliacao["Avaliação"]
+    avaliacao --> metricas["Métricas de Desempenho"]
+    metricas --> tradicionais["Tradicionais"]
+    tradicionais --> acuracia["Acuracia"]
+    tradicionais --> precisao["Precisão"]
+    tradicionais --> recall["Recall"]
+    metricas --> textos["Textos"]
+    textos --> bleu["BLEU"]
+    textos --> meteor["METEOR"]
+    metricas --> custoAvaliacao["Pode ser custoso"]
+    custoAvaliacao --> paralelo2["Processamento Paralelo"]
+    custoAvaliacao --> hardware3["Hardwares Especializados"]
+    custoAvaliacao --> alta2["Alta disponibilidade"]
+    custoAvaliacao --> centralizado2["Centralizado"]
+
+    avaliacao --> implantacao["Implantação"]
+    implantacao --> consumo["Disponibilizar para Consumo"]
+    consumo --> exportar["Exportar"]
+    consumo --> api["API"]
+    consumo --> interface["Interface"]
+    consumo --> cicd["CI/CD"]
+    consumo --> custo["Custo"]
+    custo --> paralelo3["Processamento Paralelo"]
+    custo --> hardware4["Hardwares Especializados"]
+    custo --> alta3["Alta disponibilidade"]
+    custo --> seguranca["Segurança"]
+    custo --> armazenamento2["Armazenagem de Dados"]
+
+    implantacao --> monitoramento["Monitoramento"]
+    monitoramento --> metricasMon["Métricas"]
+    metricasMon --> desempenho["Desempenho"]
+    desempenho --> online["Sistema Online"]
+    desempenho --> tempo["Tempo de Resposta"]
+    metricasMon --> negocio["Negócio"]
+    negocio --> qualidade["Qualidade dos Resultados"]
+    negocio --> drifts["Drifts"]
+    drifts --> dados["Dados"]
+    drifts --> conceito["Conceito"]
+    metricasMon --> centralizado3["Centralizado"]
+    qualidade -.-> iteracoes["Necessárias Iterações"] -.-> coletar

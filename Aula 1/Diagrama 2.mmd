@@ -1,0 +1,61 @@
+flowchart TD
+    engenheiro["Engenheiro"]
+    modeloTraducao["Modelo<br/>Inglês -> Português"]
+    coletar["Coletar Dados"]
+    preProcessamento["Pré-processamento"]
+    modelo["Modelo"]
+    avaliacao["Avaliação"]
+    implantacao["Implantação"]
+    monitoramento["Monitoramento"]
+    iteracoes["Necessárias Iterações"]
+    banco["Banco de Dados"]
+    websites["Websites"]
+    arquivos["Arquivos Locais"]
+    limpeza["Limpeza dos Dados"]
+    conversao["Conversão de Formato"]
+    hiper["Hiperparametros"]
+    tipo["Definição Tipo"]
+    entrada["Sequência de entrada"]
+    seq["Sequence-To-Sequence<br/>(Redes Recorrentes, Transformers)"]
+    saida["Sequência de saída"]
+    metricas["Métricas de Desempenho"]
+    tradicionais["Tradicionais"]
+    acuracia["Acuracia"]
+    precisao["Precisão"]
+    recall["Recall"]
+    textos["Textos"]
+    bleu["BLEU"]
+    meteor["METEOR"]
+    consumo["Disponibilizar para Consumo"]
+    translate["Google Translate"]
+    garantir["Garantir"]
+    online["Sistema Online"]
+    resposta["Tempo de Resposta"]
+    qualidade["Qualidade dos Resultados"]
+    corretas["Traduções estão corretas"]
+
+    engenheiro --> modeloTraducao --> coletar --> preProcessamento --> modelo --> avaliacao --> implantacao --> monitoramento
+    coletar --> banco
+    coletar --> websites
+    coletar --> arquivos
+    preProcessamento --> limpeza
+    preProcessamento --> conversao
+    modelo --> hiper
+    modelo --> tipo
+    tipo --> seq
+    entrada --> seq --> saida
+    avaliacao --> metricas
+    metricas --> tradicionais
+    tradicionais --> acuracia
+    tradicionais --> precisao
+    tradicionais --> recall
+    metricas --> textos
+    textos --> bleu
+    textos --> meteor
+    avaliacao -.-> iteracoes
+    monitoramento -.-> iteracoes -.-> coletar
+    implantacao --> consumo --> translate
+    monitoramento --> garantir
+    garantir --> online
+    garantir --> resposta
+    garantir --> qualidade --> corretas

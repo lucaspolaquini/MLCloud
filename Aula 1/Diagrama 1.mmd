@@ -1,0 +1,56 @@
+flowchart TD
+    ml["Aprendizado de máquina"]
+    local["Local"]
+    ambiente["Ambiente de Desenvolvimento"]
+    recursos["Limitação de Recursos"]
+    melhorias["Limitação de melhorias"]
+    maisRecursos["Necessário mais Recursos"]
+    nuvem["Nuvem"]
+    complexo["Padrões complexos"]
+    tradicional["Software tradicional não é suficiente"]
+    todoLugar["Todo Lugar"]
+    celular["Celular"]
+    casa["Casa"]
+    carro["Carro"]
+    empresas["Empresas de todos os tamanhos utilizam"]
+    microsoft["Microsoft"]
+    google["Google"]
+    amazon["Amazon"]
+    outras["Milhares de Outras"]
+    produtos["Melhorar produtos e serviços"]
+    deteccoes["Detecções"]
+    spam["Spam"]
+    fraudes["Fraudes"]
+    doencas["Doenças"]
+    reconhecimentos["Reconhecimentos"]
+    imagens["Imagens"]
+    voz["Voz"]
+    previsoes["Previsões"]
+    demandas["Demandas"]
+    climatica["Climática"]
+
+    ml --> tradicional --> complexo
+    ml --> empresas
+    ml --> todoLugar
+    ml --> ambiente --> local --> recursos --> melhorias --> maisRecursos --> nuvem
+    empresas --> microsoft
+    empresas --> google
+    empresas --> amazon
+    empresas --> outras
+    microsoft --> produtos
+    google --> produtos
+    amazon --> produtos
+    outras --> produtos
+    complexo --> deteccoes
+    complexo --> reconhecimentos
+    complexo --> previsoes
+    deteccoes --> spam
+    deteccoes --> fraudes
+    deteccoes --> doencas
+    reconhecimentos --> imagens
+    reconhecimentos --> voz
+    previsoes --> demandas
+    previsoes --> climatica
+    todoLugar --> celular
+    todoLugar --> casa
+    todoLugar --> carro
